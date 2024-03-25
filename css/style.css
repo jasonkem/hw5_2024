@@ -1,0 +1,229 @@
+/*Jason Kemp */
+
+
+/* The CSS code defines an animation for an element with the id logo, increasing its width from 25px to 475px and its opacity from 0 to 1 over 5 seconds. The animation, named hw5_animation, specifies the starting and ending states of these properties through keyframes. Initially, the logo is set to be very narrow and completely transparent, then it expands to its full width and becomes fully opaque by the end of the animation. */
+
+#logo {
+    width: 475px;
+    animation: hw5_animation 5s;
+}
+
+@keyframes hw5_animation{
+    from{
+        width: 25px;
+        opacity: 0;
+    }
+    to{
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+
+
+/* This CSS code targets the body element of a webpage, assigning it a background image located at "../images/concrete_seamless.png" without repeating the image. It sets the background color to a light grey (#f1f1f1) which acts as a fallback or fills areas not covered by the image. Additionally, the text within the body is styled to use the 'Poppins' font, with a serif font as a fallback, affecting the overall look of the text content. */
+body{
+    background-color: #f1f1f1;
+    background-image: url("../images/concrete_seamless.png");
+    font-family: 'Poppins', serif;
+    background-repeat: no-repeat;
+}
+
+/* This CSS code styles a header element by setting it up as a flex container with its items arranged in a column. The display: flex; property establishes a flexbox layout, making its direct children flexible items. The flex-direction: column; property arranges these child items vertically, one on top of the other. With align-items: center;, it centers these items horizontally within the container, ensuring they align in the middle of the header. */
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* This CSS code targets elements with the class nav_links, applying a flexbox display model to them and arranging their child elements in a vertical stack. By setting display: flex;, it enables a flexible layout that's capable of adjusting the size and position of child elements. The flex-direction: column; property specifies that these child elements should be laid out as a column, meaning they are organized from top to bottom. */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+/* This CSS code targets <a> (anchor) elements in two different states: :link, which applies to links that have not yet been visited by the user, and :visited, for links that the user has already visited. For both states, it sets the text color to blue. This ensures that all link texts, regardless of whether they have been clicked on before or not, appear in blue color on the webpage.*/
+a:link, a:visited{
+    color: blue;
+}
+
+
+/* This CSS code styles header elements that are direct children of elements with the class .card. It sets the background color of these headers to a teal shade (#288088) and outlines them with a 2px solid border in a slightly lighter shade of teal (#45ADAD). The padding is applied vertically with 20px on the top and bottom, but none on the left and right, ensuring content within the header has space above and below it. Additionally, it rounds the top corners of these headers with a radius of 50px, creating a curved edge on the top left and top right, while leaving the bottom corners square. */
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 20px 0 20px 0;
+
+}
+
+
+/* This CSS code targets elements with the .card class, setting their flex-basis property to 450px, which defines the default size of an element before the remaining space is distributed. It also applies a border-top-left-radius and border-top-right-radius of 50px to these elements, rounding the top left and top right corners, respectively. This gives the .card elements a distinct shape with curved upper corners while maintaining a rectangular overall appearance. */
+
+.card {
+    flex-basis: 450px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+
+/* This CSS code configures elements with the .pricing class to use a flexbox layout, arranging child elements in a horizontal row by default. By setting flex-wrap: wrap;, it allows the child elements to wrap onto multiple lines as needed based on the width of the container and the child elements. The justify-content: center; property aligns these children horizontally in the center of the .pricing container, while align-items: center; vertically centers the children within their container. This combination ensures that the child elements are centered both horizontally and vertically within the .pricing container, providing a balanced, flexible layout suitable for responsive design. */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* This CSS code targets img elements within elements with the .gallery class, applying several styles to these images. It adds a solid border with a width of 10px and a cyan-like color (#50C7C7) around each image. Each image also receives a margin of 10px, creating space around it to separate it from other elements or images. Lastly, the width of each image is set to 300px, standardizing the size of images within the .gallery for a uniform appearance. */
+.gallery img {
+    border: 10px solid #50C7C7;
+    width: 300px;
+    margin: 10px;
+}
+
+/* This CSS code styles elements with the .gallery class as a flexible container that arranges its child elements in a row layout that wraps onto multiple lines as needed. By setting display: flex;, it enables a flexbox layout, allowing for a flexible and efficient arrangement of child elements. The flex-wrap: wrap; property allows these children to wrap within the container, meaning if there's not enough space in one row for all items, additional items will move to a new row. With justify-content: center;, it centers the child elements horizontally within the .gallery container, ensuring the items are aligned in the middle of the container for a balanced layout. */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* This CSS code applies styles within a media query for screens with a minimum width of 900px, aiming to adjust layout properties for better presentation on larger screens.
+
+For the header tag, it sets the display to flex, allowing child elements to be placed in a row. The justify-content: space-between; property spreads the child elements out, with the first child (such as a logo) pushed to the far left and the last child (likely navigation links) to the far right. The flex-direction: row; ensures that the items are arranged horizontally.
+
+The .nav_links class is adjusted to have a flex-direction: row;, which lays out its child elements (links) in a horizontal row, aligning with modern navigation design practices for wider screens.
+
+For elements with the .card and .pricing classes, the flex-basis property is set to 275px. This defines the ideal width for these elements, ensuring they have a consistent width across the layout. This directive does not affect the elements' height, allowing them to vary based on content.
+
+The first header element directly inside the body is styled with position: sticky; and top: 0;, making it stick to the top of the viewport as the user scrolls down. This ensures that the header remains visible, providing constant access to navigation or other important content housed within the header.
+
+These adjustments enhance the website's responsiveness and usability, particularly on screens wider than 900px, by organizing content more effectively and keeping key elements like the header constantly accessible. */
+
+@media screen and (min-width: 900px){
+
+    header{
+        justify-content: space-between;
+        flex-direction: row;
+        display: flex;
+    }
+
+    .nav_links{
+        flex-direction: row;
+    }
+
+    .card{
+        flex-basis: 275px;
+    }
+
+    .pricing{
+        flex-basis: 275px;
+    }
+
+    body > header {
+        top: 0;
+        position: sticky;
+    }
+}
+
+/* This CSS media query targets users who have indicated a preference for reduced motion in their system accessibility settings. Specifically, it disables animations for an element with the #logo id when prefers-reduced-motion: reduce is set. By setting animation: none;, it ensures that the logo will still be displayed but without any of the animations that might be defined elsewhere in the CSS. This approach is important for accessibility, as it helps to avoid motion-triggered discomfort or reactions in sensitive users while maintaining the visual presence of the logo.  */
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+/* This CSS media query targets print scenarios, applying specific styles to optimize the webpage's appearance when printed. Here's what each part of the code does:
+
+For the body element, it changes the font to Arial, with Helvetica as a backup, catering to the most universally accessible fonts in printed documents. It also removes any background image by setting background-image: none;, which simplifies the printout by excluding potentially resource-intensive graphics that may not translate well to paper.
+
+The .nav_links class is adjusted to lay out its child elements in a row (flex-direction: row;) and distribute the space around them evenly (justify-content: space-around;). This alteration ensures that navigation links are spread out across the available space, making them easier to identify in the printed document.
+
+For the nav element, it sets the width to 100%, ensuring that the navigation bar spans the entire width of the page. This adjustment aids in creating a clean, full-width header or footer navigation layout in the printed version of the page.
+
+These modifications aim to improve the readability and presentation of the webpage in its printed form, prioritizing legibility and simplicity by adjusting fonts, removing background distractions, and neatly organizing navigational elements. */
+
+@media print {
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    nav{
+        width: 100%;
+    }
+}
+
+
+/* The CSS media query for print media makes several specific adjustments for printing:
+
+Animations for the #logo and main:before are disabled by setting their properties to unset.
+The body's font is changed to Arial, Helvetica, and the background image is removed (also set to unset), this helps to make a clearer print output.
+Navigation within the header is expanded to full width to ensure it prints across the page.
+Navigation links (nav_links) are laid out in a row with space around them and set to full width, organizing them neatly for print.
+Cards (card) have their size fixed at 325px wide, a solid border applied, and their growth capability removed (flex-grow: unset), making their print layout consistent.
+The pricing section is adjusted to prevent wrapping (flex-flow: nowrap) and align items at the bottom (align-items: flex-end).
+Both .gallery class elements and the #gallery element are hidden from print (display: none) to help simplify the printed page.
+An icon or character ("👍") is added after the second list item in a ul within .card elements, which might be for emphasizing or marking important points.
+*/
+
+@media print {
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: unset;
+    }
+
+    #logo {
+        animation: unset;
+    }
+
+    main:before {
+        animation: unset;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    header > nav {
+        width: 100%;
+    }
+
+    .card {
+        flex-basis: 325px;
+        border: solid 2px #45ADDD;
+        flex-grow: unset;
+    }
+    .gallery {
+        display: none;
+    }
+    #gallery {
+        display: none;
+    }
+
+    .pricing {
+        flex-flow: nowrap;
+        align-items: flex-end;
+    }
+    .card > ul > li:nth-child(2):after {
+        content: "👍";
+    }
+}
